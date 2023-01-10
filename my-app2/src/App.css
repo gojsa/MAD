@@ -1,0 +1,264 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #31b3d3;
+}
+
+.shadow-input {
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
+}
+.theme-gradient {
+  @apply bg-gradient-to-b from-[#CEDBE4] to-[#3A9FD8] text-black font-semibold;
+}
+
+.retail-wraper {
+  @apply grid grid-rows-retailWraper min-h-screen h-full w-full bg-[#349DD8] pb-10;
+}
+.retail-sidebar {
+  @apply w-full h-full col-start-2 col-end-3 row-start-2 row-end-4 p-4 text-black;
+}
+.function-slider {
+  @apply h-full w-full row-start-3 row-end-4 col-start-1 col-end-2 p-2 grid grid-cols-4 grid-rows-2 gap-2 items-center justify-center text-[#2D6A4F];
+}
+.article {
+  @apply bg-[#D8F3DC] flex w-[400px] justify-evenly text-lg  p-2 font-semibold text-black outline-none my-1 h-fit hover:bg-[#b1c8b5];
+}
+
+/* Table styling */
+.retail-table-articles {
+  @apply w-full;
+}
+.retail-table-articles > tbody {
+  @apply min-h-[400px] text-center bg-white text-black;
+}
+.retail-table-articles > tbody > tr:nth-of-type(odd) > td {
+  @apply h-[60px] text-lg font-semibold;
+}
+.retail-table-articles > tbody > tr:nth-of-type(even) > td {
+  @apply h-[60px] text-lg font-semibold;
+}
+.retail-table-articles > thead {
+  @apply bg-[#3A5F90] sticky top-0;
+}
+.table-wraper {
+  @apply max-h-[500px] overflow-auto w-full mt-4 pl-4 col-start-1 col-end-2 row-span-1;
+}
+
+/* Shortcuts */
+.shortcuts {
+  @apply bg-[#D8F3DC] w-full h-full row-start-3 row-end-4 flex flex-col justify-evenly items-center text-[#2D6A4F];
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Insert article component */
+.insert-article {
+  @apply col-start-1 col-end-3 row-start-1 row-end-2 h-full w-full flex justify-evenly items-center text-[#2D6A4F] px-10;
+}
+.insert-article > input {
+  @apply shadow-input bg-[#BBCAD2] h-[50px] outline-none pl-4 text-xl w-full mx-2;
+}
+.insert-article > input:-webkit-autofill {
+  @apply bg-red-600;
+}
+/* .insert-article > button {
+  @apply shadow-input bg-[#95D5B2] h-[50px] outline-none pl-4 text-xl text-center w-full mx-2;
+} */
+
+/* Filtered articles modal */
+.filtered-articles-modal {
+  @apply fixed left-[12%] top-[25%] z-10 bg-[#349DD8] flex flex-col p-5 min-h-[100px] items-center justify-center drop-shadow-[0px_0px__10px_rgba(0,0,0,0.9)];
+}
+
+/* function btn styling */
+.function {
+  @apply h-full w-full py-4 text-xl text-black font-semibold bg-gradient-to-b from-[#CEDBE4] to-[#3A9FD8];
+}
+.action-btn {
+  @apply bg-gradient-to-b from-[#CEDBE4] to-[#3A9FD8] w-[60px] min-w-[60px] max-w-[60px] h-[60px] mx-1 flex justify-center items-center;
+}
+.input-keyborad-btn {
+  @apply drop-shadow-[0_1px_1px_rgba(255,255,255,0.3)] text-xl text-white font-semibold bg-[#222433] hover:cursor-pointer;
+}
+
+.checkbox-wrapper-21 .control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.checkbox-wrapper-21 .control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.checkbox-wrapper-21 .control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #e6e6e6;
+}
+.checkbox-wrapper-21 .control:hover input ~ .control__indicator,
+.checkbox-wrapper-21 .control input:focus ~ .control__indicator {
+  background: #ccc;
+}
+.checkbox-wrapper-21 .control input:checked ~ .control__indicator {
+  background: #2aa1c0;
+}
+.checkbox-wrapper-21
+  .control:hover
+  input:not([disabled]):checked
+  ~ .control__indicator,
+.checkbox-wrapper-21 .control input:checked:focus ~ .control__indicator {
+  background: #0e647d;
+}
+.checkbox-wrapper-21 .control input:disabled ~ .control__indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.checkbox-wrapper-21 .control__indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+.checkbox-wrapper-21 .control input:checked ~ .control__indicator:after {
+  display: block;
+}
+.checkbox-wrapper-21 .control--checkbox .control__indicator:after {
+  left: 8px;
+  top: 4px;
+  width: 3px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.checkbox-wrapper-21
+  .control--checkbox
+  input:disabled
+  ~ .control__indicator:after {
+  border-color: #7b7b7b;
+}
+
+/* Edit payment method modal */
+.edit-payment-modal-wraper {
+  @apply fixed inset-0 flex flex-col items-center justify-center p-4 h-full w-full;
+}
+.edit-payment-modal-title {
+  @apply w-full text-[#0D5C8D] text-xl font-semibold text-center mt-2;
+}
+.edit-payment-method-modal {
+  @apply bg-white w-[400px] py-5;
+}
+.edit-payment-method-modal > div {
+  @apply w-full h-full flex flex-col justify-center items-center;
+}
+.edit-payment-method-modal > div > input {
+  @apply w-4/5 h-10 my-1 pl-4 bg-[#003E65] shadow-input outline-none;
+}
+.edit-payment-method-modal > div > section {
+  @apply w-full flex justify-evenly items-center py-10;
+}
+.quit {
+  @apply h-10 w-[150px] text-black bg-white font-semibold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)];
+}
+.save {
+  @apply bg-[#0977BC] h-10 w-[150px] text-white font-semibold drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)];
+}
+
+/* Payment method options modal */
+.payment-method-options-modal-wraper {
+  @apply fixed inset-0 flex items-center justify-center;
+}
+.payment-method-options-modal {
+  @apply flex flex-col justify-between mx-auto max-w-sm rounded bg-white h-[400px] w-[400px];
+}
+.payment-method-options-modal-title {
+  @apply w-full text-center my-5 text-xl font-semibold text-[#045689];
+}
+.options-list {
+  @apply h-full w-full flex flex-col items-center overflow-y-auto;
+}
+.options-list > button {
+  @apply w-4/5 h-10 bg-[#003E65] text-white font-semibold my-2;
+}
+.payment-method-options-modal > section {
+  @apply w-full flex justify-center items-center py-5;
+}
+
+/* Report modal */
+.report-modal-wraper {
+  @apply fixed inset-0 flex  items-center justify-center p-4;
+}
+.report-modal {
+  @apply mx-auto max-w-sm rounded bg-white p-4 w-[400px] h-[400px];
+}
+.report-modal-title {
+  @apply w-full text-center text-xl font-semibold text-[#046EB7];
+}
+.report-list {
+  @apply flex flex-col justify-evenly items-center w-full h-4/6 my-5 overflow-y-auto;
+}
+.report-list > button {
+  @apply w-4/5 h-10 bg-[#003E65] text-white font-semibold my-2;
+}
+.report-modal > section {
+  @apply w-full flex justify-center items-center;
+}
+
+/* Duplicate modal */
+.duplicate-modal-wraper {
+  @apply fixed inset-0 flex items-center justify-center;
+}
+.duplicate-modal {
+  @apply mx-auto max-w-sm rounded bg-white p-4 h-[400px] w-[400px];
+}
+.duplicate-modal-title {
+  @apply w-full text-center text-xl text-[#046EB7] font-semibold mb-5;
+}
+.duplicate-modal > form {
+  @apply h-[90%] relative flex flex-col justify-between;
+}
+.duplicate-modal > form > div > input {
+  @apply w-full h-[60px] pl-4 text-2xl font-semibold my-2 bg-[#003E65] shadow-input outline-none;
+}
+
+/* Choose date modal */
+.choose-date-modal-wraper {
+  @apply fixed inset-0 flex  items-center justify-center p-4;
+}
+.choose-date-modal {
+  @apply mx-auto max-w-sm rounded bg-white p-4 h-[400px] w-[400px];
+}
+.choose-date-modal-title {
+  @apply w-full text-center text-xl font-semibold text-[#046EB7] mb-5;
+}
+.choose-date-modal-date-wraper {
+  @apply flex flex-col justify-center items-center w-full h-3/5 mb-5;
+}
+.choose-date-modal > section {
+  @apply w-full flex justify-evenly items-center mt-[50px];
+}
+.choose-date-modal-date-picker {
+  @apply h-[60px] w-full bg-white outline-none pl-4 text-2xl font-semibold my-2 drop-shadow-[0px_1px_2px_rgba(0,0,0,0.5)];
+}
+.choose-date-modal-date-wraper > label {
+  @apply w-full text-start text-lg font-semibold text-[#046EB7] ml-10;
+}
